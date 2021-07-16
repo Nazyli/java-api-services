@@ -3,7 +3,9 @@ package com.java.apiservices.controller;
 import com.java.apiservices.dto.MasterMenuDto;
 import com.java.apiservices.dto.Response;
 import com.java.apiservices.entity.MasterMenu;
+import com.java.apiservices.entity.MasterSubMenu;
 import com.java.apiservices.repository.MasterMenuRepository;
+import com.java.apiservices.repository.MasterSubMenuRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -18,6 +20,8 @@ import java.util.*;
 public class MasterMenuController {
     @Autowired
     MasterMenuRepository masterMenuRepository;
+    @Autowired
+    MasterSubMenuRepository masterSubMenuRepository;
     @Autowired
     ModelMapper modelMapper;
 
@@ -101,6 +105,13 @@ public class MasterMenuController {
         }
         try {
             MasterMenu masterMenu = optionalEntity.get();
+
+            List<MasterSubMenu> masterSubMenus = masterSubMenuRepository.findByMasterMenu(masterMenu, "", null);
+            for (MasterSubMenu i : masterSubMenus) {
+                i.setIsDeleted((short) 1);
+            }
+            masterSubMenuRepository.saveAll(masterSubMenus);
+
             masterMenu.setIsDeleted((short) 1);
             masterMenuRepository.save(masterMenu);
             response.setSuccess("Master Menu successfully deleted!");
