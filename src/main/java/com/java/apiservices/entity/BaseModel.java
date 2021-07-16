@@ -16,4 +16,14 @@ public class BaseModel {
     @Temporal(TemporalType.TIMESTAMP)
     private Date modifiedDate;
     private short isDeleted;
+
+    @PrePersist
+    public void prePersist() {
+        this.createdDate = new Date();
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        this.modifiedDate = new Date();
+    }
 }
