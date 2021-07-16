@@ -11,7 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class MasterSubMenuDto extends BaseModelDto {
     private String subMenuId;
-    private MasterMenuDto masterMenu;
+    private String menuId;
     private String subMenuName;
     private String subMenuDescription;
     private String urlImage;
