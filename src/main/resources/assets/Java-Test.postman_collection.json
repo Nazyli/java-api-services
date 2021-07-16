@@ -1,0 +1,367 @@
+{
+	"info": {
+		"_postman_id": "6cceaf73-cb07-469c-a23a-9519ebf213ca",
+		"name": "Java-Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Master Menu",
+			"item": [
+				{
+					"name": "Find All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/rest/master-menu/find-all?search=&page=0&size=10&sort=menuName,asc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"rest",
+								"master-menu",
+								"find-all"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "menuName,asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/rest/master-menu/find/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"rest",
+								"master-menu",
+								"find",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9272e46e-e277-483e-9839-9d824c7cbc9f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"menuName\": \"EDUCATION\",\n    \"menuDescription\": \"this is education menu\",\n    \"urlImage\": \"https://placeimg.com/640/480/any\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/rest/master-menu/save",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"rest",
+								"master-menu",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"menuName\": \"EDUCATION MENU\",\n    \"menuDescription\": \"this is education menu\",\n    \"urlImage\": \"https://placeimg.com/640/480/any\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/rest/master-menu/update/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"rest",
+								"master-menu",
+								"update",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9272e46e-e277-483e-9839-9d824c7cbc9f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/rest/master-menu/delete/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"rest",
+								"master-menu",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9272e46e-e277-483e-9839-9d824c7cbc9f"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Master Sub Menu",
+			"item": [
+				{
+					"name": "Find All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/rest/master-sub-menu/find-all?search=&page=0&size=10&sort=subMenuName,asc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"rest",
+								"master-sub-menu",
+								"find-all"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "subMenuName,asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find By Menu",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/rest/master-sub-menu/findByMenu/:id?search=&page=0&size=10&sort=subMenuName,asc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"rest",
+								"master-sub-menu",
+								"findByMenu",
+								":id"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "subMenuName,asc"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9272e46e-e277-483e-9839-9d824c7cbc9f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/rest/master-sub-menu/find/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"rest",
+								"master-sub-menu",
+								"find",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "244e59c6-6847-463a-9ec9-d5e3e0a95e54"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"menuId\": \"03514b40-c4ed-451f-a03b-a4e982c2e104\",\n    \"subMenuName\": \"COMMUNITY E\",\n    \"subMenuDescription\": \"Libero eros. Tempor non lorem Non. Elementum vehicula netus risus massa et ante rhoncus ipsum, sociis sollicitudin quisque tempor cursus.\",\n    \"urlImage\": \"https://placeimg.com/640/480/any\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/rest/master-sub-menu/save",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"rest",
+								"master-sub-menu",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"menuId\": \"263f12d2-2b5a-4fc0-9d7d-b9aee206511e\",\n    \"subMenuName\": \"COMPANY B\",\n    \"subMenuDescription\": \"Congue platea in, sem blandit integer placerat laoreet adipiscing Fermentum, erat sociosqu habitasse mollis suspendisse mattis ultricies adipiscing vitae. Accumsan.\",\n    \"urlImage\": \"https://placeimg.com/640/480/any\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/rest/master-sub-menu/update/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"rest",
+								"master-sub-menu",
+								"update",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "244e59c6-6847-463a-9ec9-d5e3e0a95e54"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/rest/master-sub-menu/delete/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"rest",
+								"master-sub-menu",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "244e59c6-6847-463a-9ec9-d5e3e0a95e54"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
